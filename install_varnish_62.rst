@@ -31,8 +31,8 @@ Install Varnish::
 
     yum install varnish
 
-Install Hitch
-~~~~~~~~~~~~~
+Install and configure Hitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To handle SSL connections, an SSL terminator is needed because Varnish only handles HTTP. Hitch is an example of one that will work.
 
@@ -45,6 +45,9 @@ Install EPEL::
 Install Hitch::
 
     yum install hitch
+
+Configuration
+`````````````
 
 Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default
 configuration is sufficient, except that it will need at least one ``pem-file``
