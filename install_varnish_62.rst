@@ -172,7 +172,7 @@ here's an example magento 2 VCL file::
     # For SSL offloading, pass the following header in your proxy server or load balancer: 'X-Forwarded-Proto: https'
     
     backend default {
-        .host = "173.231.200.99";
+        .host = "50.50.50.50";
         .port = "8080";
     # TODO: look into this
     # varnish errors out unless this is commented out
