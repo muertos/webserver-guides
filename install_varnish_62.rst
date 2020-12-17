@@ -162,7 +162,7 @@ website can send purge requests to itself::
         "50.50.50.50";
     }
 
-This says localhost and are allowed to send purge requests.
+This says ``localhost`` and ``50.50.50.50`` are allowed to send purge requests.
 
 Magento also needs to be configured with an 'http_cache_host'.
 
