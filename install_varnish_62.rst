@@ -2,6 +2,8 @@
 Installing and configuring Varnish, Hitch, and Apache
 =====================================================
 
+This guides covers how to install Varnish and Hitch into a CentOS 7 server.
+
 Varnish repos for CentOS are located https://packagecloud.io/varnishcache/
 
 To install the RPM, run (pay attention to the version needed):
