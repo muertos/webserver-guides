@@ -125,7 +125,7 @@ website can send purge requests to itself::
 
     acl purge {
         "localhost";
-        "74.124.198.247";
+        "50.50.50.50";
     }
 
 This says localhost and are allowed to send purge requests.
