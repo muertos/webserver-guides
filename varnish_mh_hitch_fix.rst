@@ -35,8 +35,8 @@ Once the above is complete, you can manually update the hitch configuration by
 running::
 
     sh /usr/local/src/hitchfix.sh
-    inotifywait /var/cpanel/ssl/apache_tls -qrm --event attrib \
-    | while read change; do /bin/sh /root/hitchfix.sh; done &
+    inotifywait /var/cpanel/ssl/apache_tls -qrm --event attrib | \
+    while read change; do /bin/sh /root/hitchfix.sh; done &
 
 Once verified this works as expected, create a root cron job to automate the
 process::
