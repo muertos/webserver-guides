@@ -2,10 +2,6 @@
 Installing and configuring Varnish, Hitch, and Apache
 =====================================================
 
-# Nick W. 9/6/2019
-# This is to document how I installed Varnish 6 and Hitch and got it working with Apache
-# I worked on this account https://secure1.inmotionhosting.com/admin/note/id/587074 ( apexdi7 / ded4826 / apexdistro.com )
-
 Varnish repos for CentOS are located https://packagecloud.io/varnishcache/
 
 To install the RPM, run (pay attention to the version needed):
