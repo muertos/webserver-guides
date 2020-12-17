@@ -50,14 +50,16 @@ Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default
 configuration is sufficient, except that it will need at least one ``pem-file``
 definition with a path to an SSL file.
 
-NOTE! - Hitch will not start if no SSL file or folder path has been specified!
+**NOTE!** - Hitch will not start if no SSL file or folder path has been specified!
 
 Obtain the certificate files from Apache by using:
 ``grep SSLCertificateFile /etc/apache2/conf/httpd.conf``
 
 Add ``pem-file`` lines for each SSL certificate to ``/etc/hitch/hitch.conf``.
 
-See the `hitch fix <varnish_mh_hitch_fix.rst>`_ guide in this repository for a
+|
+
+**NOTE!** - See the `hitch fix <varnish_mh_hitch_fix.rst>`_ guide in this repository for a
 way to automate adding and removing SSL files to the hitch configuration.
 
 Create Varnish systemctl unit file
