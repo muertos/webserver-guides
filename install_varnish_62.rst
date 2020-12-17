@@ -57,6 +57,9 @@ Obtain the certificate files from Apache by using:
 
 Add ``pem-file`` lines for each SSL certificate to ``/etc/hitch/hitch.conf``.
 
+See the `hitch fix <varnish_mh_hitch_fix.rst>`_ guide in this repository for a
+way to automate adding and removing SSL files to the hitch configuration.
+
 Create Varnish systemctl unit file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
