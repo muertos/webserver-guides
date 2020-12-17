@@ -26,7 +26,7 @@ file.
 
     #!/usr/bin/bash
     sed -i '/pem-file/d' /etc/hitch/hitch.conf
-    for ssl in $(ls /var/cpanel/ssl/apache_tls/*/combined)
+    for ssl in /var/cpanel/ssl/apache_tls/*/combined
         do echo "pem-file = \"${ssl}\"" >> /etc/hitch/hitch.conf
     done
     systemctl restart hitch
