@@ -6,8 +6,9 @@ This guides covers how to install Varnish and Hitch into a CentOS 7 server.
 
 Varnish repos for CentOS are located https://packagecloud.io/varnishcache/
 
-To install the RPM, run (pay attention to the version needed):
-curl -s https://packagecloud.io/install/repositories/varnishcache/varnish62/script.rpm.sh | sudo bash
+To install the RPM, run (pay attention to the version needed)::
+
+    curl -s https://packagecloud.io/install/repositories/varnishcache/varnish62/script.rpm.sh | sudo bash
 
 You should be able to find Varnish now::
 
