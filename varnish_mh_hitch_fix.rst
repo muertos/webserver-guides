@@ -4,8 +4,8 @@ Hitch Fix
 When installing varnish and hitch manually to a cPanel server, hitch needs to
 know about each SSL file on the server. Typically when new SSLs are added or
 removed the corresponding SSL path needs to be added or removed from the hitch
-configuration. This script automates adding and removing SSL paths from the
-hitch configuration.
+configuration. This guide explains how to automate adding and removing SSL
+paths from the hitch configuration.
 
 Procedure
 ---------
