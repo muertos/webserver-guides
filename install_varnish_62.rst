@@ -29,7 +29,7 @@ You should be able to find Varnish now::
 
 Install Varnish::
 
-    ``yum install varnish``
+    yum install varnish
 
 Install Hitch
 ~~~~~~~~~~~~~
@@ -40,11 +40,11 @@ Hitch is located in CentOS's EPEL repository.
 
 Install EPEL::
 
-    ``yum install epel-release``
+    yum install epel-release
 
 Install Hitch::
 
-    ``yum install hitch``
+    yum install hitch
 
 Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default
 configuration is sufficient, except that it will need at least one ``pem-file``
