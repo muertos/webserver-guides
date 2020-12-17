@@ -2,7 +2,14 @@
 Installing and configuring Varnish, Hitch, and Apache
 =====================================================
 
-This guides covers how to install Varnish and Hitch into a CentOS 7 server.
+This guide covers how to install Varnish and Hitch into a CentOS 7 server and
+assumes the server is currently running just Apache.
+
+Procedure
+---------
+
+Install Varnish
+~~~~~~~~~~~~~~~
 
 Varnish repos for CentOS are located https://packagecloud.io/varnishcache/
 
@@ -23,6 +30,9 @@ You should be able to find Varnish now::
 Install Varnish:
 ``yum install varnish``
 
+Install Hitch
+~~~~~~~~~~~~~
+
 To handle SSL connections, an SSL terminator is needed because Varnish only handles HTTP. Hitch is an example of one that will work.
 
 Hitch is located in CentOS's EPEL repository.
@@ -33,10 +43,19 @@ Install EPEL:
 Install Hitch:
 ``yum install hitch``
 
-Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default configuration is sufficient, except that it will need at least one 'pem-file' definition.
+Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default
+configuration is sufficient, except that it will need at least one ``pem-file``
+definition with a path to an SSL file.
 
-I like to grab the certificate files from Apache by using:
+NOTE! - Hitch will not start if no SSL file or folder path has been specified!
+
+Obtain the certificate files from Apache by using:
 ``grep SSLCertificateFile /etc/apache2/conf/httpd.conf``
+
+Add ``pem-file`` lines for each SSL certificate to ``/etc/hitch/hitch.conf``.
+
+Create Varnish systemctl unit file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Varnish's systemctl file will need to be updated.
 
@@ -75,9 +94,21 @@ Here is a good example of one::
     [Install]
     WantedBy=multi-user.target
 
-Note the ExecStart lines. Varnish will listen on port 80 in this example as well as port 6086. The purpose of listening on 127.0.0.1:6086 is to receive proxy connections from Hitch. The default Varnish VCL file was in this case changed from /etc/varnish/default.vcl to /etc/varnish/m2.vcl for a Magento 2 setup.
+Note the ExecStart lines. Varnish will listen on port 80 in this example as
+well as port 6086. The purpose of listening on ``127.0.0.1:6086`` is to
+receive proxy connections from Hitch. The default Varnish VCL file was in
+this case changed from ``/etc/varnish/default.vcl`` to ``/etc/varnish/m2.vcl``
+for Magento 2.
 
-Varnish allows great depth of customization through VCL. The main Varnish VCL file is not sufficient to start caching requests and will need to be modified. I'd suggest getting started with https://varnish-cache.org/docs/6.0/users-guide/vcl.html
+Varnish Considerations
+~~~~~~~~~~~~~~~~~~~~~~
+
+Varnish will not cache out of the box. It will need to be configured to do so.
+
+Varnish allows great depth of customization through VCL. The main Varnish VCL
+file is not sufficient to start caching requests and will need to be modified.
+It is suggested to get started with the `Varnish VCL
+<https://varnish-cache.org/docs/6.0/users-guide/vcl.html>`_ guide.
 
 Multiple IPs in Apache
 ----------------------
