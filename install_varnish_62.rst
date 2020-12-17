@@ -150,13 +150,15 @@ Infinite https redirect loop with Magento 2 and Varnish
 
 I encountered this issue and the reason it occured is because Varnish looks for an HTTP header called X-Forwarded-Proto to determine if the request has come in over http or https. The header needs to be set for Magento to know on what protocol the request came in.
 
-This was addressed by adding the following to the VCL file ( in the sub vcl_recv { block ):
+This was addressed by adding the following to the VCL file ( in the sub vcl_recv { block )::
+
     # if request comes from hitch, set X-Forwarded-Proto header to https
     if (std.port(local.ip) == 6086) {
         set req.http.X-Forwarded-Proto = "https";
 
-For the above to work, there must also be this line in the VCL file ( this is not included in the default VCL file):
-import std;
+For the above to work, there must also be this line in the VCL file ( this is not included in the default VCL file)::
+
+    import std;
 
 
 -------------------------------------
