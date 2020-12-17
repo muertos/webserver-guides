@@ -164,6 +164,8 @@ website can send purge requests to itself::
 
 This says ``localhost`` and ``50.50.50.50`` are allowed to send purge requests.
 
+|
+
 Magento also needs to be configured with an 'http_cache_host'.
 
 From https://devdocs.magento.com/guides/v2.4/config-guide/varnish/use-varnish-cache.html::
