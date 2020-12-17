@@ -27,8 +27,9 @@ You should be able to find Varnish now::
     varnish-libs-devel.x86_64 : Development files for varnish-libs
     varnish.x86_64 : High-performance HTTP accelerator
 
-Install Varnish:
-``yum install varnish``
+Install Varnish::
+
+    ``yum install varnish``
 
 Install Hitch
 ~~~~~~~~~~~~~
@@ -37,11 +38,13 @@ To handle SSL connections, an SSL terminator is needed because Varnish only hand
 
 Hitch is located in CentOS's EPEL repository.
 
-Install EPEL:
-``yum install epel-release``
+Install EPEL::
 
-Install Hitch:
-``yum install hitch``
+    ``yum install epel-release``
+
+Install Hitch::
+
+    ``yum install hitch``
 
 Hitch's configuration file is located ``/etc/hitch/hitch.conf`` and the default
 configuration is sufficient, except that it will need at least one ``pem-file``
