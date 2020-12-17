@@ -199,6 +199,10 @@ For the above to work, there must also be this line in the VCL file ( this is no
 
 -------------------------------------
 
+The following is an example Magento 2 VCL file and only shown to give an idea
+of how a full VCL file will appear. If using Magento, please generate a new
+VCL file using Magento and not the following VCL!
+
 **Example magento 2 VCL file**::
 
     vcl 4.0;
