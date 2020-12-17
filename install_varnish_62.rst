@@ -199,7 +199,7 @@ For the above to work, there must also be this line in the VCL file ( this is no
 
 -------------------------------------
 
-here's an example magento 2 VCL file::
+**Example magento 2 VCL file**::
 
     vcl 4.0;
     
