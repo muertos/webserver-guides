@@ -8,6 +8,31 @@ assumes the server is currently running just Apache.
 Procedure
 ---------
 
+Overview
+~~~~~~~~
+
+The following outlines the path requests take via each component of this
+webserver stack.
+
+Varnish will listen on these ports:
+
+* 0.0.0.0:80
+* 127.0.0.1:6086
+
+Hitch will listen on:
+
+* 0.0.0.0:443
+
+Apache will listen on:
+
+* 0.0.0.0:8080
+
+HTTPS requests will first pass through hitch. Hitch then sends these requests
+to Varnish listening on 127.0.0.1:6086. Varnish then either serves the request
+from cache or sends the request to Apache, on 0.0.0.0:8080.
+
+HTTP requests will go to Varnish via 0.0.0.0:80.
+
 Install Varnish
 ~~~~~~~~~~~~~~~
 
