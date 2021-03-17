@@ -35,15 +35,18 @@ file.
 
     chmod +x /usr/local/src/hitchfix.sh
 
-Once the above is complete, you can manually update the hitch configuration by
-running::
+Once the above is complete, run the script to be sure it updates
+``hitch.conf`` as expected::
 
     sh /usr/local/src/hitchfix.sh
-    inotifywait /var/cpanel/ssl/apache_tls -qrm --event attrib | \
+
+Once verified the script operates, run it using ``inotifywait`` once to start
+the process::
+
+    /usr/bin/inotifywait /var/cpanel/ssl/apache_tls -qrm --event attrib | \
     while read change; do /bin/sh /usr/local/src/hitchfix.sh; done &
 
-Once verified this works as expected, create a root cron job to automate the
-process::
+Finally, create a root cron job to keep the job alive on server reboot::
 
     @reboot /usr/bin/inotifywait /var/cpanel/ssl/apache_tls -qrm --event attrib | while read change; do /bin/sh /usr/local/src/hitchfix.sh; done &
 
