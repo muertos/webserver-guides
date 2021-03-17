@@ -5,6 +5,8 @@ Installing and configuring Varnish, Hitch, and Apache
 This guide covers how to install Varnish and Hitch into a CentOS 7 cPanel
 server and assumes the server is currently running just Apache.
 
+.. TODO -- add Table of Contents
+
 Procedure
 ---------
 
